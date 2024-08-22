@@ -150,7 +150,12 @@ def get_module_hook(model, representation, backend="native") -> nn.Module:
                 int(representation.moe_key),
             )
     else:
-        parameter_name = ".".join(representation.component.split(".")[:-1])
+        components = representation.component.split(".")
+        if len(components) > 1:
+            parameter_name = ".".join(components[:-1])
+        else:
+            parameter_name = components[0]
+        
         if representation.component.split(".")[-1] == "input":
             hook_type = CONST_INPUT_HOOK
         elif representation.component.split(".")[-1] == "output":
