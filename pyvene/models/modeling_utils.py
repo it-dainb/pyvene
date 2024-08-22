@@ -154,7 +154,7 @@ def get_module_hook(model, representation, backend="native") -> nn.Module:
         if len(components) > 1:
             parameter_name = ".".join(components[:-1])
         else:
-            parameter_name = components[0]
+            raise NotImplementedError(f"Model {model} not supported")
         
         if representation.component.split(".")[-1] == "input":
             hook_type = CONST_INPUT_HOOK
