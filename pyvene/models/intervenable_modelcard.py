@@ -12,6 +12,7 @@ from .blip.modelings_intervenable_blip_itm import *
 from .backpack_gpt2.modelings_intervenable_backpack_gpt2 import *
 from .llava.modelings_intervenable_llava import *
 from .olmo.modelings_intervenable_olmo import *
+from .qwen.modelings_intervenable_qwen import *
 
 #########################################################################
 """
@@ -62,6 +63,8 @@ type_to_module_mapping = {
     hf_models.olmo.modeling_olmo.OlmoForCausalLM: olmo_lm_type_to_module_mapping,  
     hf_models.blip.modeling_blip.BlipForQuestionAnswering: blip_type_to_module_mapping,
     hf_models.blip.modeling_blip.BlipForImageTextRetrieval: blip_itm_type_to_module_mapping,
+    hf_models.qwen.modeling_qwen.QWENModel: qwen_type_to_module_mapping,
+    hf_models.qwen.modeling_qwen.QWENForCausalLM: qwen_lm_type_to_module_mapping,
     MLPModel: mlp_type_to_module_mapping,
     MLPForClassification: mlp_classifier_type_to_module_mapping,
     GRUModel: gru_type_to_module_mapping,
@@ -95,6 +98,8 @@ type_to_dimension_mapping = {
     hf_models.olmo.modeling_olmo.OlmoForCausalLM: olmo_lm_type_to_dimension_mapping, 
     hf_models.blip.modeling_blip.BlipForQuestionAnswering: blip_type_to_dimension_mapping,
     hf_models.blip.modeling_blip.BlipForImageTextRetrieval: blip_itm_type_to_dimension_mapping,
+    hf_models.qwen.modeling_qwen.QWENModel: qwen_type_to_dimension_mapping,
+    hf_models.qwen.modeling_qwen.QWENForCausalLM: qwen_lm_type_to_dimension_mapping,
     MLPModel: mlp_type_to_dimension_mapping,
     MLPForClassification: mlp_classifier_type_to_dimension_mapping,
     GRUModel: gru_type_to_dimension_mapping,
