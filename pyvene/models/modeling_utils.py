@@ -8,7 +8,9 @@ from .constants import *
 
 def get_internal_model_type(model):
     """Return the model type."""
-    return type(model)
+    base_model = getattr(model, "model", model)
+
+    return type(base_model)
 
 
 def is_stateless(model):
