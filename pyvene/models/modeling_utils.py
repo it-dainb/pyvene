@@ -4,7 +4,7 @@ from torch import nn
 from .intervenable_modelcard import *
 from .interventions import *
 from .constants import *
-
+import re
 
 def get_internal_model_type(model):
     """Return the model type."""
@@ -99,6 +99,9 @@ def getattr_for_torch_module(model, parameter_name):
 def get_dimension_by_component(model_type, model_config, component) -> int:
     """Based on the representation, get the aligning dimension size."""
 
+    if re.match(r"base_model\.model\.model\.layers\[\d+\]\.output", component) is not None:
+        component = 'block_output
+    
     if component not in type_to_dimension_mapping[model_type]:
         return None
 
