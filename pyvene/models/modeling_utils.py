@@ -100,7 +100,7 @@ def get_dimension_by_component(model_type, model_config, component) -> int:
     """Based on the representation, get the aligning dimension size."""
 
     if re.match(r"base_model\.model\.model\.layers\[\d+\]\.output", component) is not None:
-        component = 'block_output
+        component = 'block_output'
     
     if component not in type_to_dimension_mapping[model_type]:
         return None
